@@ -28,7 +28,12 @@ const RatingPayana = ({ value, onChange, isReadOnly }: Rating) => {
       name="simple-controlled"
       value={value}
       size="large"
-      onChange={(e, newValue) => newValue && onChange(newValue)}
+      onChange={(e, newValue) => {
+        if (newValue) {
+          onChange(newValue)
+          console.log(e)
+        }
+      }}
     />
   );
 };
